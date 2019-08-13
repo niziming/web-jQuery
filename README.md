@@ -79,3 +79,35 @@ innerWidth();
 innerHeight();
 outerWidth();
 outerHeight();
+
+# 5.AJAX
+
+jQuery load() 方法
+jQuery load() 方法是简单但强大的 AJAX 方法。
+
+load() 方法从服务器加载数据，并把返回的数据放入被选元素中。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
