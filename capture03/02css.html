@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>callback</title>
+    <link rel="stylesheet" href="../asset/css/mystyle.css">
+</head>
+<body>
+<button id="clickTest">点击</button>
+<button id="cancelColor">取消颜色</button>
+<button id="cancelStyle">取消样式</button>
+<h1>标题 1</h1>
+<h2>标题 2</h2>
+<p>这是一个段落。</p>
+<p>这是另一个段落。</p>
+<div>这是非常重要的文本！</div>
+
+<br>
+
+<script src="../asset/js/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var $button = $("button#clickTest");
+        var $cancel = $("button#cancelColor");
+        var $style = $("button#cancelStyle");
+        var $target = $("h1,h2,p");
+        $button.click(function () {
+//            $target.addClass("important aqua");
+            $target.toggleClass("important aqua")
+
+        });
+        $cancel.click(function () {
+            $target.removeClass("aqua")
+
+        });
+
+        $style.click(function () {
+            $target.removeClass("important")
+
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>callback</title>
+
+</head>
+<body>
+<button id="hidden">点击获取文本</button>
+<div style="background: #98bf21; width: 150px; height: 150px">
+    <h1 id="textDemo">我来测试<b>jqueryDom</b>操作</h1>
+    <p>姓名：<input type="text" class="test" value="米老鼠" title="title"></p>
+    <p>mima：<input type="text" id="pass" value="米老鼠" title="title"></p>
+</div>
+<script src="../asset/js/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var $button = $("button#hidden");
+        var $div = $("div ");
+        var $textDemo = $("div #textDemo");
+        var $inputDemo = $("div input");
+        $button.click(function () {
+            // 双参数
+            // $div.toggle(1000, function () {
+            // alert("msg");
+            // });
+
+            // chaining 链式编程
+//            $div.css("background", "yellow").slideToggle(1000, function () {
+//                $div.css("background", "blue")
+//            });
+
+//            var text = $textDemo.text();/*设置或返回所选元素的文本内容*/
+//            var html = $textDemo.html();/*设置或返回所选元素的内容（包括 HTML 标记）*/
+//            $inputDemo.attr("value", "nihao");
+//            console.log($textDemo.after("<h2>我是之后</h2>"));/*jQuery after() 方法在被选元素之后插入内容。*/
+//            console.log($textDemo.before("<h2>我是之后</h2>"));/*jQuery before() 方法在被选元素之前插入内容。*/
+//            console.log(html);
+//            console.log($inputDemo.val("<h2>我是之后</h2>"));
+
+//            $div.remove();//remove() 方法删除被选元素及其子元素。
+//            $div.remove();//empty() 方法删除被选元素的子元素。
+            $("input").remove("#pass");
+        })
+    })
+</script>
+</body>
+</html>

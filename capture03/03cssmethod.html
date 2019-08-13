@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css()</title>
+    <link rel="stylesheet" href="../asset/css/mystyle.css">
+</head>
+<body>
+<button id="getStyle">获取属性数据</button>
+<button id="clickTest">获取属性数据</button>
+
+<div id="main" style="height: 100px; width: 300px">
+    <h1>标题 1</h1>
+    <h2>标题 2</h2>
+    <p>这是一个段落。</p>
+    <p>这是另一个段落。</p>
+    <p id="info">info</p>
+</div>
+<br>
+
+<script src="../asset/js/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var $main = $("#main");
+        var txt = "";
+        var $getStyle = $("button#getStyle");
+        var $button = $("button#clickTest");
+        var $cancel = $("button#cancelColor");
+        var $style = $("button#cancelStyle");
+        var $target = $("h1,h2,p");
+        var $css = $("div#main");
+
+        $getStyle.click(function () {
+            txt += "Width: " + $main.width() + "<br>";
+            txt += "Height: " + $main.height() + "<br>";
+            $("#info").html(txt)
+        });
+
+        $button.click(function () {
+            txt += "InnerWidth: " + $main.innerWidth() + "<br>";
+            txt += "InnerHeight: " + $main.innerHeight() + "<br>";
+            $("#info").html(txt)
+        })
+    })
+</script>
+</body>
+</html>

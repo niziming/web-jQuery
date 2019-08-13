@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery-尺寸</title>
+    <link rel="stylesheet" href="../asset/css/mystyle.css">
+</head>
+<body>
+<button id="getStyle">获取样式值</button>
+<button id="clickTest">设置背景颜色</button>
+<button id="cancelColor">取消颜色</button>
+<button id="cancelStyle">取消样式</button>
+
+<div id="main">
+    <h1>标题 1</h1>
+    <h2>标题 2</h2>
+    <p>这是一个段落。</p>
+    <p>这是另一个段落。</p>
+</div>
+
+<script src="../asset/js/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var $getStyle = $("button#getStyle");
+        var $button = $("button#clickTest");
+        var $cancel = $("button#cancelColor");
+        var $style = $("button#cancelStyle");
+        var $target = $("h1,h2,p");
+        var $css = $("div#main");
+
+        $getStyle.click(function () {
+            var css = $target.css("font-size");
+            alert(css);
+        });
+
+        $button.click(function () {
+            $css.css({
+                "background" : "yellow",
+                "color" : "red",
+                "font-family" : "宋体"
+            });
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery-尺寸</title>
+    <link rel="stylesheet" href="../asset/css/mystyle.css">
+</head>
+<body>body (曾曾祖父)
+<button id="testDemo">获取样式值</button>
+
+<div id="main">div (曾祖父)
+    <ul>ul (祖父)
+        <li>你好</li>
+        <li>li(直接父)<span>span</span></li>
+    </ul>
+</div>
+
+<script src="../asset/js/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var $testDemo = $("button#testDemo");
+        var $span = $("div#main span");
+        var $li = $("div#main li");
+        $testDemo.click(function () {
+            // var html = $span.html();
+            /*获取父节点*/
+            /*var parent = $span.parent().attr("id");
+            var parent2 = $li.parents("html").prop("nodeName");
+            console.log(parent2);*/
+
+            var parentsUntil = $span.parentsUntil($li);
+            console.log(parentsUntil.prop("nodeName"))
+        });
+
+    })
+</script>
+</body>
+</html>

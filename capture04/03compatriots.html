@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery-尺寸</title>
+    <link rel="stylesheet" href="../asset/css/mystyle.css">
+</head>
+<body>body (曾曾祖父)
+<button id="testDemo">获取样式值</button>
+
+<div id="main">div (曾祖父)
+    <ul>ul (祖父)
+        <li id="filterDemo">你好</li>
+        <li>li(直接父)<span>span</span></li>
+    </ul>
+    <h1 id="demo">1级标签</h1>
+    <h2>2及标签</h2>
+    <span>span内容</span>
+    <p>段落标签</p>
+</div>
+
+<script src="../asset/js/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var $testDemo = $("button#testDemo");
+        var $span = $("div#main span");
+        var $li = $("div#main li");
+        var $p = $("div#main p");
+        var style = {
+            "color" : "red",
+            "border" : "2px solid red"
+        };
+        $testDemo.click(function () {
+            /*siblings() 方法返回被选元素的所有同胞元素。*/
+//             $li.siblings().css(style);
+
+            // siblings() 方法返回被选元素的所有同胞元素。
+            // $p.siblings("h1").css(style);
+
+            /*next() 方法返回被选元素的下一个同胞元素。*/
+//            $("span").next().css(style)
+
+            /*ul 到 span 之间的节点*/
+//            $("ul").nextUntil("span").css(style)
+
+            /*first() 方法返回被选元素的首个元素。*/
+//            $("ul").nextUntil("span").first().css(style)
+
+            /*first() 方法返回被选元素的最后一个元素。*/
+//            $("ul").nextUntil("span").last().css(style)
+
+            /*eq() 方法返回被选元素中带有指定索引号的元素。*/
+//            $("ul").children().eq(0).css(style)
+
+            /*ilter() 方法允许您规定一个标准。不匹配这个标准的元素会被从集合
+            中删除，匹配的元素会被返回。*/
+//            $("ul").children().filter("#filterDemo").css(style)
+
+            /*not() 方法与 filter() 相反。*/
+//            $("ul").children().not("#filterDemo").css(style)
+
+
+
+        });
+
+    })
+</script>
+</body>
+</html>

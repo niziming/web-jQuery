@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <link rel="stylesheet" type="text/css" href="../asset/css/mystyle.css">
+</head>
+<body>
+<button id="fadeTest">淡入淡出</button>
+<button id="slideTest">滑动</button>
+
+<div id="div1">
+    <h1>jQuery 效果</h1>
+    <a href="../index.html">首页</a> <br>
+    <a href="capture01/">第一节</a>
+    <p style="display: block" class="pDemo">点击消失</p>
+    <p class="pDemo">再点击消失</p>
+    <p class="pDemo">再点击消失</p>
+    <a href="www.baidu.com">百度</a>
+</div>
+<script src="../asset/js/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+        // 隐藏
+        $("button#fadeTest").click(function () {
+            $("div#div1").fadeToggle(1000);
+        });
+
+        $("button#slideTest").click(function () {
+            $("div#div1").slideToggle(1000);
+        })
+
+    })
+</script>
+</body>
+</html>

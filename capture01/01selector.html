@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <link rel="stylesheet" type="text/css" href="../asset/css/mystyle.css">
+</head>
+<body>
+
+<div id="div1">
+    <h1>Demo of jQuery</h1>
+    <a href="../index.html">首页</a> <br>
+
+    <a href="capture01/">第一节</a>
+    <p class="pDemo">点击消失</p>
+    <p class="pDemo">再点击消失</p>
+    <p class="pDemo">再点击消失</p>
+    <a href="www.baidu.com">百度</a>
+</div>
+<script src="../asset/js/jquery.min.js"></script>
+<script>
+    // 将函数绑定到文档的就绪事件（当文档完成加载时）
+    $(document).ready(function () {
+        $("p.pDemo").click(function () {
+            $(this).hide();
+        });
+        $("[href$='.com']").css("color", "red");
+        $("div#div1 .pDemo").click(function () {
+            $(this).hide();
+        })
+    })
+</script>
+</body>
+</html>

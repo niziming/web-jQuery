@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>callback</title>
+
+</head>
+<body>
+<button id="hidden">点击隐藏</button>
+<div style="background: #98bf21; width: 150px; height: 150px">
+
+</div>
+<script src="../asset/js/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var $button = $("button#hidden");
+        var $div = $("div");
+        $button.click(function () {
+            // 双参数
+//            $div.toggle(1000, function () {
+//                alert("msg");
+//            });
+
+            // chaining 链式编程
+            $div.css("background", "yellow").slideToggle(1000, function () {
+                $div.css("background", "blue")
+            });
+        })
+
+
+
+    })
+</script>
+</body>
+</html>
