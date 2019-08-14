@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery-尺寸</title>
+    <link rel="stylesheet" href="../asset/css/mystyle.css">
+</head>
+<body>
+<button id="testDemo">点击加载</button>
+
+<div id="main"></div>
+
+<script src="../asset/js/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var $button = $("button");
+        var $div = $("div#main");
+        $button.click(function () {
+            /*responseTxt - 包含调用成功时的结果内容
+             statusTXT - 包含调用的状态
+             xhr - 包含 XMLHttpRequest 对象*/
+            $div.load("../asset/demo.txt", function (responseTxt, statusTxt, xhr) {
+                if (statusTxt == "success"){
+                    console.log("外部内容加载成功");
+                    console.log(responseTxt);
+                    console.log(statusTxt);
+                    console.log(xhr);
+                    console.log(xhr.statusText);
+                }
+                else
+                    console.log("错误:" + xhr.status + ":" + xhr.statusText)
+            })
+        })
+    })
+</script>
+</body>
+</html>

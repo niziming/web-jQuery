@@ -87,10 +87,28 @@ jQuery load() 方法是简单但强大的 AJAX 方法。
 
 load() 方法从服务器加载数据，并把返回的数据放入被选元素中。
 
+语法：
+~~~
+$(selector).load(URL,data,callback);
+~~~
 
+# jQuery $.get() 方法
+$.get() 方法通过 HTTP GET 请求从服务器上请求数据。
 
+语法：
+$.get(URL,callback);
+必需的 URL 参数规定您希望请求的 URL。
 
+可选的 callback 参数是请求成功后所执行的函数名。
 
+下面的例子使用 $.get() 方法从服务器上的一个文件中取回数据：
+
+实例
+$("button").click(function(){
+  $.get("demo_test.asp",function(data,status){
+    alert("Data: " + data + "\nStatus: " + status);
+  });
+});
 
 
 

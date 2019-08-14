@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery|Get</title>
+    <link rel="stylesheet" href="../asset/css/mystyle.css">
+</head>
+<body>
+
+<button id="testDemo">点击加载</button>
+
+<div id="main">
+    <h1>测试</h1>
+</div>
+
+<script src="../asset/js/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var $div = $("#main");
+        var $button = $("button#testDemo");
+        $button.click(function () {
+            /*$.get() 方法通过 HTTP GET 请求从服务器上请求数据。*/
+            /*$.get("../capture05/testdemo.js", function (data, status) {
+                // alert("" + data + "\nStatus:" + status);
+            })*/
+
+            /*$.post() 方法通过 HTTP POST 请求从服务器上请求数据。*/
+            /*$.post("../capture05/testdemo.js",{
+                name: "D"
+            })*/
+
+            var ajax = $.ajax({
+                url: "../asset/demo.txt",
+                async: false,
+                success: function () {
+
+                }
+            });
+            console.log(ajax.responseText);
+            $div.append(ajax.responseText);
+        })
+    })
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

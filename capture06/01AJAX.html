@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="launch">启动</button>
+    <div id="demo"></div>
+
+<script src="../asset/js/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var $div = $("#demo");
+        var $launch = $("#launch");
+        var ajaxRequest = "";
+        $launch.click(function () {
+            ajaxRequest = $.ajax({
+                url: "../asset/demo.txt",
+                async:false
+            });
+
+            $div.html(ajaxRequest.responseText);
+
+        })
+    })
+</script>
+</body>
+</html>
