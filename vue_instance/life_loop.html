@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue生命周期</title>
+</head>
+<div id="app">
+    <h1>{{a}}</h1>
+    <button v-on:click="a = 2">点击改变</button>
+</div>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data: {
+                a: 1
+            },
+            created: function () {
+                console.log("created")
+                console.log('a: ' + this.a)
+                alert("created")
+            },
+            mounted: function () {
+                console.log("mounted")
+                console.log('a: ' + this.a)
+                alert("mounted")
+
+            },
+            updated: function () {
+                console.log("updated")
+                console.log('a: ' + this.a)
+
+            },
+            destroyed: function () {
+                console.log("destroyed")
+                console.log('a: ' + this.a)
+            }
+        })
+    </script>
+</body>
+</html>

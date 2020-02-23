@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh" xmlns:v-on="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>主页</title>
@@ -7,12 +7,15 @@
 <body>
 
 <div id="app">
-    {{msg}}
+    通过使用 v-once 指令，你也能执行一次性地插值，当数据改变时，插值处的内容不会更新。
+    <hr>
+    <span v-once>{{msg}}</span>
+    <br>
+    <button v-on:click="msg = 'change'">点击改变</button>
 </div>
 
 <!--vue-->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<!--<script src="https://unpkg.com/axios/dist/axios.min.js"></script>-->
 
 <script>
     var vm = new Vue({

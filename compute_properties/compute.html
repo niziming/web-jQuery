@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--body begin-->
+<div id="app">
+    <h1>当前时间:{{getCurrentTime()}}</h1>
+    <h1>当前时间:{{getCurrentTime1}}</h1>
+</div>
+<!--body end-->
+
+<!--import js begin-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<!--import js end-->
+
+<!--js begin-->
+<script>
+    var vm = new Vue({
+        el: "#app",
+        methods: {
+            getCurrentTime: function () {
+                return Date.now();
+            }
+        },
+        computed: {
+            getCurrentTime1: function () {
+                return Date.now();
+            }
+        }
+    })
+</script>
+<!--js end-->
+</body>
+</html>

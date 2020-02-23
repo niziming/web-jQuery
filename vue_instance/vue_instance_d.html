@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue实例</title>
+</head>
+<div id="app">
+    <h1>{{a}}</h1>
+    <button v-on:click="a = 2">点击改变</button>
+</div>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var data = {a:1}
+
+        var vm = new Vue({
+            el:'#app',
+            data: data
+        })
+
+        console.log(vm.$data === data)
+        console.log(vm.$el === document.getElementById('app'))
+        console.log(document.getElementById('app').innerText)
+
+        //$watch 是一个实例方法
+        vm.$watch('a', function (newVlaue, oldValue) {
+            //这个回调将在 `vm.a` 改变后调用
+            alert("a被改变了")
+        })
+    </script>
+</body>
+</html>

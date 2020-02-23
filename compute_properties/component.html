@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件</title>
+</head>
+<body>
+<div id="app">
+    <ol>
+        <!-- 创建一个 todo-item 组件的实例 -->
+        <todo-item v-for="list in lists" v-bind:op="list"></todo-item>
+    </ol>
+</div>
+
+<!--import js begin-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!--<script src="https://unpkg.com/axios/dist/axios.min.js"></script>-->
+<!--import js end-->
+<script>
+
+    // 定义名为 todo-item 的新组件
+    Vue.component('todo-item', {
+        props:['op'],
+        template: '<li>{{op.text}}</li>'
+    });
+
+    var vm = new Vue({
+        el: '#app',
+        data:{
+            lists:[
+                {id:0, text:'vegetables'},
+                {id:1, text:'cheese'},
+                {id:2, text:'casually'}
+            ]
+        }
+    })
+</script>
+</body>
+</html>

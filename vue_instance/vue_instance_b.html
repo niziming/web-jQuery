@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue实例</title>
+</head>
+<div id="app">
+    {{ visitCount }}
+</div>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+
+
+
+        var vm = new Vue({
+            el:'#app',
+            data: {
+                newTodoText: '',
+                visitCount: 0,
+                hideCompletedTodos: false,
+                todos: [],
+                error: null
+            }
+        })
+    </script>
+</body>
+</html>
